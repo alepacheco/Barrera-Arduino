@@ -56,8 +56,7 @@ Ahora os adjuntaremos y explicaremos el código:
     digitalWrite(ledr, LOW); digitalWrite(leda, HIGH); delay(1000); digitalWrite(leda, LOW); delay(1000); digitalWrite(leda, HIGH); delay(1000); digitalWrite(leda, LOW); delay(1000); digitalWrite(leda, HIGH); delay(1000); digitalWrite(leda, LOW); delay(1000); digitalWrite(ledv, HIGH); //Una vez ha cambiado el led a verde, cambiamos la posición de la barrera. barrera.write(100); delay(5000); digitalWrite(ledv, LOW);   }
 
 Por último os dejamos el prometido vídeo con el funcionamiento de la barrera:
-
-[youtube https://www.youtube.com/watch?v=B_tqEkcRRug&version=3&f=user_uploads&c=google-webdrive-0&app=youtube_gdata]
+![alt text](http://2.bp.blogspot.com/-guCqR4duKKw/UwCep_MX57I/AAAAAAAAAIc/DAgdaZCxtcs/s1600/DSC00238.JPG "Logo Title Text 1")
 Como siempre, para cualquier duda o pregunta podéis usar el espacio de más abajo o nuestro correo electrónico.
 
 Un saludo.
