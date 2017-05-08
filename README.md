@@ -1,10 +1,7 @@
 # Projecto Barrera informatica
-#### Por Alejandro, Hellin, Adrian, Daniel
+## Por Alejandro, Hellin, Adrian, Daniel
 
-En el tutorial de hoy vamos a ver un tutorial muy sencillo donde interactuarán LEDs y un Servo.
- 
-
-Nuestros componentes a usar serán:
+### Nuestros componentes a usar serán:
 - 1 LED Rojo
 - 1 LED Verde
 - 1 LED Amarillo
@@ -13,10 +10,10 @@ Nuestros componentes a usar serán:
 - 1 Arduino UNO
 - 1 Board
 - Cables
-A continuación mostramos el esquema eléctrico con las respectivas conexiones:
 
 
-Procederemos seguidamente al montaje de la barrera. Para ello hemos dibujado sobre un cartón el desarrollo de un poste semáforo y lo hemos recortado con algunos huecos.
+
+Procederemos seguidamente al montaje de la barrera. Para ello hemos dibujado sobre un cartón el desarrollo y lo hemos recortado con algunos huecos.
 
 
 En la parte frontal del semáforo hemos adaptado un agujero con las medidas de nuestro servo. Con los propios tornillos que venían en nuestro kit para adaptar las piezas en nuestro serio los usamos para fijar el servo contra el cartón.
@@ -57,6 +54,3 @@ Ahora os adjuntaremos y explicaremos el código:
 
 Por último os dejamos el prometido vídeo con el funcionamiento de la barrera:
 ![alt text](http://2.bp.blogspot.com/-guCqR4duKKw/UwCep_MX57I/AAAAAAAAAIc/DAgdaZCxtcs/s1600/DSC00238.JPG "Logo Title Text 1")
-Como siempre, para cualquier duda o pregunta podéis usar el espacio de más abajo o nuestro correo electrónico.
-
-Un saludo.
