@@ -1,4 +1,4 @@
-# Projecto Barrera informatica
+# Proyecto Barrera informatica
 ## Por Alejandro, Hellin, Adrian, Daniel
 
 ### Nuestros componentes a usar serán:
