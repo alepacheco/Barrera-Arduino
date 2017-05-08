@@ -31,26 +31,52 @@ Una vez ensamblado todo quedaría como la imagen de la derecha, donde hemos fija
 
 Un tornillo para fijar un extremo de la barrera sobre el eje de rotación del servo. Previamente el servo lo hemos equipado con una de las barras que vienen en nuestro kit para poder atornillar. El segundo tornillo sobre la barrera lo hemos fijado a una cierta distancia del eje de rotación por detrás de la barrera. De esta manera evitaremos que la barrera se escurra o pivote sobre el eje de rotación del servo (primer tornillo).
 
-En el vídeo adjunto al final podremos ver el poste completo con más detalle.
 
 Ahora os adjuntaremos y explicaremos el código:
 
     #include <Servo.h> //Importamos la biblioteca Servo.h
     #include <Arduino.h> 
+    
     Servo barrera; //Declaramos un servo y se llama barrer, con esto vamos a trabajar
     int ledv = 13; //Declaramos un Led, en este caso el verde sobre el pin 13
     int leda = 12;
     int ledr = 11;
+    
     //Establecemos el modo de función de cada led
-    void setup(){  pinMode(ledv, OUTPUT);  pinMode(leda, OUTPUT);  pinMode(ledr, OUTPUT);    //Asociamos el servomotor al pin 9 del Arduino  barrera.attach(9);   }   void loop(){
-    //Comenzamos nuestro programa encendiendo el Led rojo ya que nuestra barrera comien//za con la posición 0.
-    //Esto es ajustable dado que nosotros decidimos las posiciones iniciales
-    digitalWrite(ledr, HIGH); //Le mandamos un angulo de 10 grados a nuestro servo por errores de funcionamiento. //Recomiendo que el inicio del mismo sea en 0 grados
-    barrera.write(10);
-    //Hacemos un delay de 5 segundo antes de mandarle la siguiente instruccion
-    delay (5000);
-    //Hacemos el programa para el cambio de rojo a verde pasando por el amarillo.
-    digitalWrite(ledr, LOW); digitalWrite(leda, HIGH); delay(1000); digitalWrite(leda, LOW); delay(1000); digitalWrite(leda, HIGH); delay(1000); digitalWrite(leda, LOW); delay(1000); digitalWrite(leda, HIGH); delay(1000); digitalWrite(leda, LOW); delay(1000); digitalWrite(ledv, HIGH); //Una vez ha cambiado el led a verde, cambiamos la posición de la barrera. barrera.write(100); delay(5000); digitalWrite(ledv, LOW);   }
+    void setup() {
+        pinMode(ledv, OUTPUT);
+        pinMode(leda, OUTPUT);
+        pinMode(ledr, OUTPUT);
+    }   
+    
+    void loop() {
+        //Comenzamos nuestro programa encendiendo el Led rojo ya que nuestra barrera comien//za con la posición 0.
+        //Esto es ajustable dado que nosotros decidimos las posiciones iniciales
+        digitalWrite(ledr, HIGH); //Le mandamos un angulo de 10 grados a nuestro servo por errores de funcionamiento. 
+        //Recomiendo que el inicio del mismo sea en 0 grados
+        barrera.write(10);
+        //Hacemos un delay de 5 segundo antes de mandarle la siguiente instruccion
+        delay (5000);
+        //Hacemos el programa para el cambio de rojo a verde pasando por el amarillo.
+        digitalWrite(ledr, LOW);
+        digitalWrite(leda, HIGH); 
+        delay(1000); 
+        digitalWrite(leda, LOW);
+        delay(1000);
+        digitalWrite(leda, HIGH); 
+        delay(1000);
+        digitalWrite(leda, LOW);
+        delay(1000); 
+        digitalWrite(leda, HIGH);
+        delay(1000);
+        digitalWrite(leda, LOW);
+        delay(1000);
+        digitalWrite(ledv, HIGH);
+        //Una vez ha cambiado el led a verde, cambiamos la posición de la barrera. 
+        barrera.write(100); 
+        delay(5000);
+        digitalWrite(ledv, LOW);  
+        }
 
 Por último os dejamos el prometido vídeo con el funcionamiento de la barrera:
 ![alt text](http://2.bp.blogspot.com/-guCqR4duKKw/UwCep_MX57I/AAAAAAAAAIc/DAgdaZCxtcs/s1600/DSC00238.JPG "Logo Title Text 1")
