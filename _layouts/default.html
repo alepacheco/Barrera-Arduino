@@ -10,14 +10,13 @@
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <style>
       .page-header {
-        background-image: url("http://s3.amazonaws.com/digitaltrends-uploads-prod/2015/06/railroad_crossing_shutterstock_81223753.jpg");
-        background-repeat:no-repeat;
-        background-position: center center;
+        background-image: url("http://s3.amazonaws.com/digitaltrends-uploads-prod/2015/06/railroad_crossing_shutterstock_81223753.jpg") no-repeat center center fixed;
+        background-size: cover;
       }
     </style>
   </head>
   <body>
-    <section hight="25px" class="page-header">
+    <section class="page-header">
       <h1 class="project-name">{{ site.title | default: site.github.repository_name }}</h1>
       <h2 class="project-tagline">{{ site.description | default: site.github.project_tagline }}</h2>
     </section>
