@@ -32,7 +32,7 @@ Un tornillo para fijar un extremo de la barrera sobre el eje de rotación del se
 
 
 ## Codigo usado
-```
+```c
 #include <Servo.h> //Importamos la biblioteca Servo.h
 #include <Arduino.h>
 
