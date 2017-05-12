@@ -118,4 +118,4 @@ Por último os dejamos el prometido vídeo con el funcionamiento de la barrera:
 ![alt text](http://2.bp.blogspot.com/-guCqR4duKKw/UwCep_MX57I/AAAAAAAAAIc/DAgdaZCxtcs/s1600/DSC00238.JPG "Logo Title Text 1")
 
 
-### Por Alejandro, Hellin, Adrian y Daniel
+### Por Alejandro, Hellin, Adrian y Daniel
