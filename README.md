@@ -32,53 +32,90 @@ Un tornillo para fijar un extremo de la barrera sobre el eje de rotación del se
 
 
 ## Codigo usado
-```
-#include <Servo.h> //Importamos la biblioteca Servo.h
-#include <Arduino.h>
+```c
+#include <Servo.h> 
+#include <Arduino.h> 
 
-Servo barrera; //Declaramos un servo y se llama barrer, con esto vamos a trabajar
-int ledv = 13; //Declaramos un Led, en este caso el verde sobre el pin 13
-int leda = 12;
-int ledr = 11;
+#define LED_VERDE 13 
+#define LED_AMARILLO 12
+#define LED_ROJO 11
+#define PIN_PITO 10
+#define PIN_SERVO 9
 
-//Establecemos el modo de función de cada led
-void setup() {
-    pinMode(ledv, OUTPUT);
-    pinMode(leda, OUTPUT);
-    pinMode(ledr, OUTPUT);
-}   
+#define ROJO led(1);
+#define AMARILLO led(2);
+#define VERDE led(3);
 
-void loop() {
-    //Comenzamos nuestro programa encendiendo el Led rojo ya que nuestra barrera comien//za con la posición 0.
-    //Esto es ajustable dado que nosotros decidimos las posiciones iniciales
-    digitalWrite(ledr, HIGH); //Le mandamos un angulo de 10 grados a nuestro servo por errores de funcionamiento.
-    //Recomiendo que el inicio del mismo sea en 0 grados
-    barrera.write(10);
-    //Hacemos un delay de 5 segundo antes de mandarle la siguiente instruccion
-    delay (5000);
-    //Hacemos el programa para el cambio de rojo a verde pasando por el amarillo.
-    digitalWrite(ledr, LOW);
-    digitalWrite(leda, HIGH);
-    delay(1000);
-    digitalWrite(leda, LOW);
-    delay(1000);
-    digitalWrite(leda, HIGH);
-    delay(1000);
-    digitalWrite(leda, LOW);
-    delay(1000);
-    digitalWrite(leda, HIGH);
-    delay(1000);
-    digitalWrite(leda, LOW);
-    delay(1000);
-    digitalWrite(ledv, HIGH);
-    //Una vez ha cambiado el led a verde, cambiamos la posición de la barrera.
-    barrera.write(100);
-    delay(5000);
-    digitalWrite(ledv, LOW);  
-    }
+#define BARRERA_SUBIDA 75
+#define BARRERA_BAJADA 10
+
+Servo barrera; 
+
+void setup(){
+   pinMode(LED_VERDE,OUTPUT);
+   pinMode(LED_AMARILLO, OUTPUT);
+   pinMode(LED_ROJO, OUTPUT);
+   pinMode(PIN_PITO,OUTPUT);
+   barrera.attach(PIN_SERVO);
+   bajarBarrera();
+}
+void loop(){
+  ROJO
+  delay(4000);
+  AMARILLO
+  delay(2000);
+  subirBarrera();
+  VERDE
+  delay(5000);
+  bajarBarrera();
+  ROJO
+}
+
+void bajarBarrera() {
+  bajarLento();
+}
+
+void subirBarrera() {
+  subirLento();
+}
+
+void bajarLento() {
+  for (int x = BARRERA_SUBIDA; x > BARRERA_BAJADA;x--) {
+    barrera.write(x);
+    delay(5);
+  }
+  
+}
+
+void subirLento() {
+  for (int x = BARRERA_BAJADA; x < BARRERA_SUBIDA; x++) {
+    barrera.write(x);
+    delay(5);
+  }
+}
+
+
+void led(int x) {
+  if (x== 1){
+     digitalWrite(LED_ROJO, HIGH);
+     digitalWrite(LED_AMARILLO, LOW);
+     digitalWrite(LED_VERDE, LOW);
+  }
+  if (x== 2){
+     digitalWrite(LED_ROJO, LOW);
+     digitalWrite(LED_AMARILLO, HIGH);
+     digitalWrite(LED_VERDE, LOW);
+  }
+  if (x== 3){
+     digitalWrite(LED_ROJO, LOW);
+     digitalWrite(LED_AMARILLO, LOW);
+     digitalWrite(LED_VERDE, HIGH);
+  }
+}
+
 ```
 Por último os dejamos el prometido vídeo con el funcionamiento de la barrera:
 ![alt text](http://2.bp.blogspot.com/-guCqR4duKKw/UwCep_MX57I/AAAAAAAAAIc/DAgdaZCxtcs/s1600/DSC00238.JPG "Logo Title Text 1")
 
 
-### Por Alejandro, Hellin, Adrian y Daniel
+### Por Alejandro, Hellin, Adrian y Daniel
