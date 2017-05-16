@@ -36,15 +36,15 @@ Un tornillo para fijar un extremo de la barrera sobre el eje de rotación del se
 #include <Servo.h>
 #include <Arduino.h>
 
-#define LED_VERDE 13
+#define LED_VERDE    13
 #define LED_AMARILLO 12
-#define LED_ROJO 11
-#define PIN_PITO 10
-#define PIN_SERVO 9
+#define LED_ROJO     11
+#define PIN_PITO     10
+#define PIN_SERVO     9
 
-#define ROJO led(1);
+#define ROJO     led(1);
 #define AMARILLO led(2);
-#define VERDE led(3);
+#define VERDE    led(3);
 
 #define BARRERA_SUBIDA 75
 #define BARRERA_BAJADA 10
@@ -52,10 +52,11 @@ Un tornillo para fijar un extremo de la barrera sobre el eje de rotación del se
 Servo barrera;
 
 void setup(){
-   pinMode(LED_VERDE,OUTPUT);
+   pinMode(LED_VERDE,    OUTPUT);
    pinMode(LED_AMARILLO, OUTPUT);
-   pinMode(LED_ROJO, OUTPUT);
-   pinMode(PIN_PITO,OUTPUT);
+   pinMode(LED_ROJO,     OUTPUT);
+   pinMode(PIN_PITO,     OUTPUT);
+
    barrera.attach(PIN_SERVO);
    bajar();
 }
@@ -72,7 +73,8 @@ void loop(){
 }
 
 void bajar() {
-  for (int x = BARRERA_SUBIDA; x > BARRERA_BAJADA;x--) {
+  for (int x = BARRERA_SUBIDA; x > BARRERA_BAJADA;x--)
+  {
     barrera.write(x);
     delay(5);
   }
@@ -80,25 +82,30 @@ void bajar() {
 }
 
 void subir() {
-  for (int x = BARRERA_BAJADA; x < BARRERA_SUBIDA; x++) {
+  for (int x = BARRERA_BAJADA; x < BARRERA_SUBIDA; x++)
+  {
     barrera.write(x);
     delay(5);
   }
 }
 
 
-void led(int x) {
-  if (x== 1){
+void led(int x)
+{
+  if (x== 1)
+  {
      digitalWrite(LED_ROJO, HIGH);
      digitalWrite(LED_AMARILLO, LOW);
      digitalWrite(LED_VERDE, LOW);
   }
-  if (x== 2){
+  if (x== 2)
+  {
      digitalWrite(LED_ROJO, LOW);
      digitalWrite(LED_AMARILLO, HIGH);
      digitalWrite(LED_VERDE, LOW);
   }
-  if (x== 3){
+  if (x== 3)
+  {
      digitalWrite(LED_ROJO, LOW);
      digitalWrite(LED_AMARILLO, LOW);
      digitalWrite(LED_VERDE, HIGH);
