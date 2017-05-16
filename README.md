@@ -33,10 +33,10 @@ Un tornillo para fijar un extremo de la barrera sobre el eje de rotación del se
 
 ## Codigo usado
 ```c
-#include <Servo.h> 
-#include <Arduino.h> 
+#include <Servo.h>
+#include <Arduino.h>
 
-#define LED_VERDE 13 
+#define LED_VERDE 13
 #define LED_AMARILLO 12
 #define LED_ROJO 11
 #define PIN_PITO 10
@@ -49,7 +49,7 @@ Un tornillo para fijar un extremo de la barrera sobre el eje de rotación del se
 #define BARRERA_SUBIDA 75
 #define BARRERA_BAJADA 10
 
-Servo barrera; 
+Servo barrera;
 
 void setup(){
    pinMode(LED_VERDE,OUTPUT);
@@ -57,37 +57,29 @@ void setup(){
    pinMode(LED_ROJO, OUTPUT);
    pinMode(PIN_PITO,OUTPUT);
    barrera.attach(PIN_SERVO);
-   bajarBarrera();
+   bajar();
 }
 void loop(){
   ROJO
   delay(4000);
   AMARILLO
   delay(2000);
-  subirBarrera();
+  subir();
   VERDE
   delay(5000);
-  bajarBarrera();
+  bajar();
   ROJO
 }
 
-void bajarBarrera() {
-  bajarLento();
-}
-
-void subirBarrera() {
-  subirLento();
-}
-
-void bajarLento() {
+void bajar() {
   for (int x = BARRERA_SUBIDA; x > BARRERA_BAJADA;x--) {
     barrera.write(x);
     delay(5);
   }
-  
+
 }
 
-void subirLento() {
+void subir() {
   for (int x = BARRERA_BAJADA; x < BARRERA_SUBIDA; x++) {
     barrera.write(x);
     delay(5);
